@@ -114,3 +114,22 @@ N = 2
 ## Charges
 
 charge_dict =   {'H':1, 'He':2}
+
+
+### We declare the matrices we need
+
+
+S = np.zeros((B,B))
+T = np.zeros((B,B))
+V = np.zeros((B,B))
+multi_electron_tensor = np.zeros((B,B,B,B))
+
+## Iterate through atoms
+for idx_a, val_a in enumerate(atom_types):
+
+    ## For every atom  get the charge and the centre
+    Za = charge_dict[val_a]
+    Ra = atom_coordinates[val_a]
+
+    for m in range(max_quantum_number[val_a]):
+        d_vec_m = D[m]
