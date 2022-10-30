@@ -10,7 +10,7 @@ def extract_xyz(data_file):
      delim_whitespace= True, names=['atom', 'x', 'y', 'z'])
 
     atom_type = [i for i in df["atom"]]
-    atom_coordinates = [(i,j,k) for i,j,k in zip(df["x"],df["y"],df["z"])]
+    atom_coordinates = [(float(i),float(j),float(k)) for i,j,k in zip(df["x"],df["y"],df["z"])]
 
 
 
